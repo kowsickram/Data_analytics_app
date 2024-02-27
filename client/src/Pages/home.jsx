@@ -3,8 +3,8 @@ import React from 'react';
 export default function Home (){
   return (
     <>
-      <div className='container h-screen flex items-center flex-col p-4 justify-center'>
-        <img src='./images/analysiiii.png' className='rounded-md shadow-md hover:shadow-lg' width={250} alt='logo' />
+      <div className='container  flex items-center flex-col  justify-center'>
+        <img src='./images/back.png' className='rounded-md shadow-md hover:shadow-lg' width={250} alt='logo' />
         <h1 className='text-center text-2xl font-bold mt-11 text-white'>
           Transform Your Data Into Meaningful Insights
         </h1>

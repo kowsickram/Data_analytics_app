@@ -26,7 +26,7 @@ export default function App() {
             <Route path="/features" element={<Features />} />
             <Route path="/settings" element={<Settings />} />
           </Routes>
-       {/* <Footer /> */}
+       <Footer />
     </HashRouter>
   )
 }

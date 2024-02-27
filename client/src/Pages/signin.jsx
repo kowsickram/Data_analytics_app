@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Preloader from "../Components/Preloader";
 import { Link } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Signin() {
   const [email, setEmail] = useState("");
@@ -41,15 +43,14 @@ export default function Signin() {
       })
       .then((response) => {
         if (response.data && response.data.success) {
-          alert("Login Successfully");
-
+          toast.success("Login Successfully");
           const user = { email, password };
 
           sessionStorage.setItem("user", JSON.stringify(user));
-          // setTimeout(() => {
-          //   //  window.location.reload();
-          //   //  window.location.href= "/home";
-          // }, 1000);
+          setTimeout(() => {
+            window.location.reload();
+            window.location.href = "/home";
+          }, 1000);
         } else {
           alert("An error occurred while logging in");
         }
@@ -62,6 +63,12 @@ export default function Signin() {
 
   return (
     <>
+      <ToastContainer
+        position="bottom-right"
+        theme="dark"
+        draggable
+        autoClose={5000}
+      />
       {loading ? (
         <Preloader />
       ) : (
@@ -88,7 +95,7 @@ export default function Signin() {
                     type="email"
                     autoComplete="email"
                     required
-                    placeholder="Email"
+                    placeholder="@gmail.com"
                     onChange={(event) => setEmail(event.target.value)}
                     className="w-full bg-gray-800 text-white border border-gray-700 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500"
                   />
@@ -117,6 +124,7 @@ export default function Signin() {
                     id="password"
                     name="password"
                     type="password"
+                    placeholder="************"
                     autoComplete="current-password"
                     value={password}
                     onChange={(event) => setPassword(event.target.value)}

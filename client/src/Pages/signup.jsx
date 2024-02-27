@@ -3,6 +3,8 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Preloader from "../Components/Preloader";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 export default function Signup() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
@@ -49,8 +51,8 @@ export default function Signup() {
         if (response.data && response.data.success) {
           const user = { email, password };
           sessionStorage.setItem("user", JSON.stringify(user));
-          // window.location.reload();
-          // window.location.href= "/home";
+          window.location.reload();
+          window.location.href = "/home";
         } else {
           // Handle unsuccessful response here, such as displaying an error message
         }
@@ -59,13 +61,19 @@ export default function Signup() {
         console.error("Error creating user:", error);
       });
 
-    alert("Sign Up Successfully");
+    toast.success("Sign Up Successfully");
   }
 
   const isFormValid = username && email && password;
 
   return (
     <>
+      <ToastContainer
+        position="bottom-right"
+        theme="dark"
+        draggable
+        autoClose={5000}
+      />
       {loading ? (
         <Preloader />
       ) : (

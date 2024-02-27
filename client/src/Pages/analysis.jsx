@@ -17,13 +17,13 @@ export default function Analysis() {
       return;
     }
 
-    setLoading(true); // Set loading to true when uploading file
+    setLoading(true); 
 
     const formData = new FormData();
     formData.append("file", file);
 
     axios
-      .post("http://localhost:4000/data-analytics", formData, {
+      .post("http://localhost:4000/file/upload", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -41,15 +41,18 @@ export default function Analysis() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-max w-screen m-3">
-      <div className="p-4 rounded-lg bg-slate-950">
+    <div className="flex flex-col items-center justify-center h-max  m-3">
+      <div className="p-4 container text-center rounded-lg bg-slate-950">
         <div className="m-4 flex flex-col relative">
-          <label className="block text-sm font-semibold text-slate-300 mb-2">
-            Upload Any CSV File
+        <center>
+        <img src="./images/stat.png" width={150} alt="stat" />
+        </center>
+          <label className="block text-sm font-light text-slate-300 mb-2">
+            Upload any CSV file
           </label>
           <label
             htmlFor="file-upload"
-            className="cursor-pointer bg-slate-800 text-white font-semibold py-2 px-4 rounded-md hover:bg-slate-900 focus:outline-none focus:bg-blue-600"
+            className="cursor-pointer bg-slate-800 text-white font-normal transition-all py-2 px-4 rounded-md hover:bg-slate-900 focus:outline-none focus:bg-blue-600"
           >
             Choose File
           </label>
@@ -67,7 +70,7 @@ export default function Analysis() {
         </div>
 
         <button
-          className="bg-slate-800  text-white font-semibold p-2 rounded-md hover:bg-slate-900 focus:outline-none focus:bg-blue-600 mb-4"
+          className="bg-slate-800  text-white font-semibold p-2 rounded-md transition-all hover:bg-slate-900 focus:outline-none focus:bg-blue-600 mb-4"
           onClick={handleFileUpload}
         >
           Submit

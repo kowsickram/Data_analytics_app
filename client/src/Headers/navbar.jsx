@@ -41,6 +41,9 @@ export default function Nav() {
             <span className="sr-only">Your Company</span>
             <img src="./images/llooo.svg" width={150} alt="logo"></img>
           </Link>
+          {activeuser?(
+                     <div className="text-blue-500 font-Croissant text-2xl  p-2 rounded-lg items-center font-normal">{activeuser}</div>
+                ):null}
         </div>
         <div className="flex lg:hidden">
           <button
@@ -57,35 +60,32 @@ export default function Nav() {
         <div className="hidden lg:flex lg:gap-x-12 lg:justify-center lg:items-center">
           <Link
             to="/analysis"
-            className="text-sm font-normal leading-6 text-white focus:font-semibold focus:text-teal-500"
+            className="text-sm font-Quicksand font-normal leading-6 text-white focus:font-semibold focus:text-teal-500"
           >
             Data
           </Link>
           <Link
             to="/features"
-            className="text-sm font-normal leading-6 text-white focus:font-semibold focus:text-teal-500"
+            className="text-sm font-Quicksand font-normal leading-6 text-white focus:font-semibold focus:text-teal-500"
           >
             Features
           </Link>
           <Link
             to="/settings"
-            className="text-sm font-normal leading-6 text-white focus:font-semibold focus:text-teal-500"
+            className="text-sm font-Quicksand font-normal leading-6 text-white focus:font-semibold focus:text-teal-500"
           >
             Settings
           </Link>
-          {activeuser?(
-                     <div className="text-teal-500 items-center font-normal">{activeuser}</div>
-                ):null}
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <button onClick={handleLogout} className="ml-2 rounded-lg p-2 text-white bg-slate-900">Log-out</button>
+          <button onClick={handleLogout} className="ml-2 rounded-lg p-2 font-Quicksand text-white bg-slate-900">Log-out</button>
         </div>
         </>
         ) : (
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
         <Link
             to="/sign-up"
-            className="text-sm font-normal leading-6 text-white focus:font-semibold focus:text-teal-500"
+            className="text-sm font-Quicksand font-normal leading-6 text-white focus:font-semibold focus:text-teal-500"
           >
             Sign up <span aria-hidden="true">&larr;</span>
           </Link>
@@ -120,23 +120,23 @@ export default function Nav() {
             <>
           <Link
             to="/analysis"
-            className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-white "
+            className="-mx-3 font-Quicksand block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-white "
           >
             Data
           </Link>
           <Link
             to="/features"
-            className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-white "
+            className="-mx-3 font-Quicksand block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-white "
           >
             Features
           </Link>
           <Link
             to="/settings"
-            className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-white"
+            className="-mx-3 font-Quicksand block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-white"
           >
             Settings
           </Link>
-          <button onClick={handleLogout} className=" rounded-lg p-2 text-white bg-slate-800">Log-out</button>
+          <button onClick={handleLogout} className=" rounded-lg p-2 font-Quicksand text-white bg-red-800">Log-out</button>
           </>
           ) : (
           <Link

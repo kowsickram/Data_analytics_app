@@ -4,7 +4,13 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        Croissant: ["Croissant One", "serif"],
+        Kite:["Kite One","sans-serif"],
+        Quicksand:["Quicksand", "sans-serif"],
+      },
+    },
   },
   plugins: [],
 }

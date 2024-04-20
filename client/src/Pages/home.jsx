@@ -1,48 +1,46 @@
 import React from 'react';
+import { Link } from "react-router-dom";
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
-export default function Home (){
+export default function Home() {
+  const settings = {
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+  };
+
   return (
-    <>
-      <div className='container  flex items-center flex-col  justify-center'>
-        <img src='./images/back.png' className='rounded-md shadow-md hover:shadow-lg' width={250} alt='logo' />
-        <h1 className='text-center text-2xl font-bold mt-11 text-white'>
-          Transform Your Data Into Meaningful Insights
-        </h1>
-        <p className='text-center text-lg mt-4 text-gray-300'>
-          Welcome to Analyzify - your all-in-one solution for data analytics. Whether you're a business owner, data scientist, or simply curious about your data, our app makes it easy to analyze and visualize your data like never before.
-        </p>
-        <div className='mt-8 flex justify-center'>
-          <a href='/' className='bg-blue-500 hover:bg-blue-600 text-white font-semibold px-6 py-3 rounded-md focus:outline-none focus:bg-blue-600'>
-            Get Started
-          </a>
+    <div className=' p-6 flex-col items-center justify-center'>
+      <Slider {...settings}>
+        <div  className='p-4'>
+        <div  className='flex flex-row items-center justify-center'>
+          <img src='./images/1.png' className=' rounded-xl' width={750} alt='slide1' />
         </div>
+        </div>
+        <div className='p-4'>
+        <div  className='flex flex-row items-center justify-center'>
+          <img src='./images/2.png' className=' rounded-xl' width={750} alt='slide2' />
+        </div>
+        </div>
+        <div className='p-4'>
+        <div  className='flex flex-row items-center justify-center'>
+          <img src='./images/3.png' className=' rounded-xl' width={750} alt='slide3' />
+        </div>
+        </div>
+      </Slider>
+      <h1 className='text-center font-Kite text-2xl font-bold mt-11 text-white'>
+        Transform Your Data Into Meaningful Insights
+      </h1>
+      <div className='mt-8 flex justify-center'>
+        <Link to='/sign-up' className='bg-violet-500 hover:bg-violet-600 text-white font-semibold px-6 py-3 rounded-md focus:outline-none focus:bg-blue-600'>
+          Get Started
+        </Link>
       </div>
-      {/* Additional Sections */}
-      <section className='bg-gray-800 py-16'>
-        <div className='container mx-auto'>
-          <h2 className='text-3xl font-bold text-white text-center mb-8'>
-            Why Choose Data Analyzer?
-          </h2>
-          <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
-            {/* Feature 1 */}
-            <div className='p-6 bg-gray-900 rounded-md shadow-md'>
-              <h3 className='text-xl font-semibold text-white mb-4'>Easy to Use</h3>
-              <p className='text-gray-300'>
-                Our app offers a simple and intuitive interface, allowing users to upload their data effortlessly and get insightful analytics in minutes.
-              </p>
-            </div>
-            {/* Feature 2 */}
-            <div className='p-6 bg-gray-900 rounded-md shadow-md'>
-              <h3 className='text-xl font-semibold text-white mb-4'>Powerful Analytics</h3>
-              <p className='text-gray-300'>
-                Utilize advanced data analytics algorithms to uncover trends, patterns, and outliers in your data, enabling informed decision-making.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-          </>
+    </div>
   );
 };
-
-

@@ -40,16 +40,12 @@ export default function Signup() {
       return;
     }
 
-    const newUser = {
-      username: username,
-      password: password,
-      email: email,
-    };
+   
     axios
       .post("/api/signup", { username, password, email })
       .then((response) => {
         if (response.data && response.data.success) {
-          const user = { email, password };
+          const user = { email };
           sessionStorage.setItem("user", JSON.stringify(user));
           window.location.reload();
           window.location.href = "/home";
@@ -79,7 +75,7 @@ export default function Signup() {
       ) : (
         <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8B  ">
           <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-            <h2 className=" text-center text-2xl font-light leading-9 tracking-tight text-white">
+            <h2 className=" font-Kite text-center text-2xl font-light leading-9 tracking-tight text-white">
               Sign-Up to Get Started
             </h2>
           </div>
@@ -97,6 +93,7 @@ export default function Signup() {
                   <input
                     id="username"
                     name="username"
+                    placeholder="username"
                     type="text"
                     value={username}
                     onChange={(event) => setUsername(event.target.value)}
@@ -116,6 +113,7 @@ export default function Signup() {
                   <input
                     id="email"
                     name="email"
+                    placeholder="@gmail.com"
                     type="email"
                     autoComplete="email"
                     value={email}
@@ -139,6 +137,7 @@ export default function Signup() {
                   <input
                     id="password"
                     name="password"
+                    placeholder="password"
                     type="password"
                     autoComplete="current-password"
                     value={password}

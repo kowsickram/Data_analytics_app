@@ -2,7 +2,6 @@ import React from 'react'
 
 // Header 
 import Nav from './Headers/navbar'
-import Footer from './Headers/footer'
 
 // Page 
 import Signin from './Pages/signin'
@@ -26,7 +25,6 @@ export default function App() {
             <Route path="/features" element={<Features />} />
             <Route path="/settings" element={<Settings />} />
           </Routes>
-       <Footer />
     </HashRouter>
   )
 }
